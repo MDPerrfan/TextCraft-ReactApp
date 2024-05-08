@@ -1,6 +1,7 @@
-import React from 'react'
-import { Container,Row,Col } from 'react-bootstrap'
-import Github from './Github'
+import React from 'react';
+import { Container,Row,Col } from 'react-bootstrap';
+import Github from './Github';
+import Aboutcard from './AboutCard';
 export default function About(props) {
     let myStyle={
         color:props.mode==="dark"?"white":"black",
