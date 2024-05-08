@@ -1,3 +1,45 @@
 .coral {
     color: rgb(255, 80, 80);
 }
+
+.footer {
+    /* background-color: rgb(246, 246, 250); */
+    bottom: 0 !important;
+    padding-top: 10px !important;
+    padding-bottom: 8px !important;
+}
+
+.footer-copywright {
+    text-align: center !important;
+}
+
+.footer-body {
+    z-index: 1;
+    text-align: center !important;
+}
+
+@media (max-width: 767px) {
+    .footer-copywright {
+        text-align: center !important;
+    }
+    .footer-body {
+        text-align: center !important;
+    }
+}
+
+.footer h3 {
+    font-size: .8em;
+    /* color: rgb(65, 65, 65) !important; */
+    margin-top: 0.5em !important;
+    margin-bottom: 0.5em !important;
+}
+
+.footer-icons {
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+    align-items: center;
+    /*     margin-top: 0.4em !important;
+    margin-bottom: 0.4em !important; */
+    padding: 0 !important;
+}

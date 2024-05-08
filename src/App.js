@@ -1,7 +1,9 @@
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 import About from './components/About';
+import Footer from './components/Footer';
 import React, { useState } from 'react';
+import './App.css';
 import {
   BrowserRouter as Router,
   Routes,
@@ -37,6 +39,7 @@ function App() {
           </div>
         </div>
       </Router>
+      <Footer mode={mode}/>
     </>
   );
 }
