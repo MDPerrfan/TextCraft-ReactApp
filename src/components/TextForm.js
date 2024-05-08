@@ -62,17 +62,17 @@ export default function TextForm(props) {
             </div>           
             <h1>{props.title}</h1>
             <textarea className="form-control "style={{backgroundColor:props.mode==='dark'?'#282e3a':'white',color:props.mode==='dark'?'white':'black'}} value={text} onChange={handleOnChange} id="exampleFormControlTextarea1" rows="12"></textarea>        
-            <button disabled={text.length===0} className="btn btn-primary mx-3 my-3 " onClick={handleUpClick}>Convert to UpperCase</button>
-            <button disabled={text.length===0} className="btn btn-primary mx-3 my-3 " onClick={handlelowClick}>Convert to LowerCase</button>
-            <button disabled={text.length===0} className="btn btn-primary mx-3 my-3 " onClick={handleSpaceremove}>Remove Spaces</button>
-            <button disabled={text.length===0} className="btn btn-primary mx-3 my-3 " onClick={handleCopy}>Copy Text</button>
-            <button className="btn btn-primary mx-3 my-3 " onClick={handlePaste}>Paste Text</button>
+            <button disabled={text.length===0} className={`btn ${props.mode === 'dark' ? 'btn-secondary' : 'btn-primary'} mx-3 my-3`} onClick={handleUpClick}>Convert to UpperCase</button>
+            <button disabled={text.length===0} className={`btn ${props.mode === 'dark' ? 'btn-secondary' : 'btn-primary'} mx-3 my-3`} onClick={handlelowClick}>Convert to LowerCase</button>
+            <button disabled={text.length===0} className={`btn ${props.mode === 'dark' ? 'btn-secondary' : 'btn-primary'} mx-3 my-3`} onClick={handleSpaceremove}>Remove Spaces</button>
+            <button disabled={text.length===0} className={`btn ${props.mode === 'dark' ? 'btn-secondary' : 'btn-primary'} mx-3 my-3`} onClick={handleCopy}>Copy Text</button>
+            <button className={`btn ${props.mode === 'dark' ? 'btn-secondary' : 'btn-primary'} mx-3 my-3`} onClick={handlePaste}>Paste Text</button>
             <button disabled={text.length===0} className='btn btn-danger mx-3 my-3' onClick={resetText}>Reset</button>
         </div>
         <div className="d-flex my-4">
-            <div className="container"style={{color:props.mode==='dark'?'white':'black'}} >
+            <div className="container "style={{color:props.mode==='dark'?'white':'black'}} >
                 <h3>Your Text Summary</h3>
-                <p>{(text.split(/\s+/).filter(word => word.trim() !== "")).length} Words and {text.length} Characters</p>
+                <p className='my-4'>{(text.split(/\s+/).filter(word => word.trim() !== "")).length} Words and {text.length} Characters</p>
             </div>
             <div className="container" style={{ color: props.mode === 'dark' ? 'white' : 'black' }}>
                 <h4>Typing Speed</h4>

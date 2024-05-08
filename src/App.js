@@ -22,7 +22,7 @@ function App() {
     } else {
       setMode('dark');
       setToggleText('Disable Dark Mode');
-      document.body.style.backgroundColor = '#0a204b';
+      document.body.style.backgroundColor = 'rgb(17 24 36)';
     }
   };
 
