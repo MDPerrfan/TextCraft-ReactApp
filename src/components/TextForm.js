@@ -76,7 +76,7 @@ export default function TextForm(props) {
             </div>
             <div className="container" style={{ color: props.mode === 'dark' ? 'white' : 'black' }}>
                 <h4>Typing Speed</h4>
-                <p>{typingSpeed} WPM<box-icon  type="solid" name="tachometer"></box-icon></p>
+                <p>{typingSpeed} WPM<box-icon  name="tachometer"></box-icon></p>
             </div>
         </div>         
     </>
