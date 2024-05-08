@@ -27,17 +27,17 @@ export default function TextForm(props) {
                 <h1>{props.title}</h1>
                 <textarea className="form-control"style={{backgroundColor:props.mode==='dark'?'#282e3a':'white',color:props.mode==='dark'?'white':'black'}} value={text} onChange={handleOnChange} id="exampleFormControlTextarea1" rows="12"></textarea>
             </div>
-            <button className="btn btn-primary" onClick={handleUpClick}>Convert to UpperCase</button>
-            <button className="btn btn-primary mx-3 " onClick={handlelowClick}>Convert to LowerCase</button>
-            <button className="btn btn-primary" onClick={handleSpaceremove}>Remove Spaces</button>
-            <button className='btn btn-danger mx-3' onClick={resetText}>Reset</button></div>
+            <button disabled={text.length===0} className="btn btn-primary mx-3 my-3 " onClick={handleUpClick}>Convert to UpperCase</button>
+            <button disabled={text.length===0} className="btn btn-primary mx-3 my-3 " onClick={handlelowClick}>Convert to LowerCase</button>
+            <button disabled={text.length===0} className="btn btn-primary mx-3 my-3 " onClick={handleSpaceremove}>Remove Spaces</button>
+            <button disabled={text.length===0} className='btn btn-danger mx-3 my-3' onClick={resetText}>Reset</button></div>
         <div className="container"style={{color:props.mode==='dark'?'white':'black'}} >
             <h2>Your Text Summary</h2>
             <p>{(text.split(" ").filter(word => word.trim() !== "")).length} Words and {text.length} Characters</p>
         </div>
         <div className="container" style={{color:props.mode==='dark'?'white':'black'}}>
         <h3>Preview</h3>
-        <p>{text}</p>
+        <p>{text.length>0?text:"Nothing to preview!"}</p>
         </div>
 
     </>
