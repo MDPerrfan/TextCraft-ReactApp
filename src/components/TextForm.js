@@ -57,7 +57,7 @@ export default function TextForm(props) {
     }, [text, startTime]);
   return (
     <>
-        <div className="container " style={{color:props.mode==='dark'?'white':'black'}}>
+        <div className="textForm" style={{color:props.mode==='dark'?'white':'black',minHeight:"68vh"}}>
             <div className="alert mb-4"style={{height:"50px"}}>{alertMessage && <div class="alert alert-success" role="alert">{alertMessage}</div>}    
             </div>           
             <h1>{props.title}</h1>

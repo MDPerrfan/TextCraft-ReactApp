@@ -25,6 +25,9 @@
     .footer-body {
         text-align: center !important;
     }
+    .my-3 {
+        margin-top: .2rem !important;
+    }
 }
 
 .footer h3 {
