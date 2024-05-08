@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from 'react';
-import 'boxicons';
+import { FaTachometerAlt } from "react-icons/fa";
 
 export default function TextForm(props) {
     const[typingSpeed,setTypingSpeed]=useState(0);
@@ -69,14 +69,14 @@ export default function TextForm(props) {
             <button className="btn btn-primary mx-3 my-3 " onClick={handlePaste}>Paste Text</button>
             <button disabled={text.length===0} className='btn btn-danger mx-3 my-3' onClick={resetText}>Reset</button>
         </div>
-        <div className="d-flex">
+        <div className="d-flex my-4">
             <div className="container"style={{color:props.mode==='dark'?'white':'black'}} >
                 <h3>Your Text Summary</h3>
                 <p>{(text.split(/\s+/).filter(word => word.trim() !== "")).length} Words and {text.length} Characters</p>
             </div>
             <div className="container" style={{ color: props.mode === 'dark' ? 'white' : 'black' }}>
                 <h4>Typing Speed</h4>
-                <p>{typingSpeed} WPM<box-icon  name="tachometer"></box-icon></p>
+                <p>{typingSpeed} WPM <span style={{fontSize:"2rem"}}><FaTachometerAlt /></span></p>
             </div>
         </div>         
     </>

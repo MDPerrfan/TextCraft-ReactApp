@@ -1,4 +1,6 @@
 import React from 'react'
+import { Container,Row,Col } from 'react-bootstrap'
+import Github from './Github'
 export default function About(props) {
     let myStyle={
         color:props.mode==="dark"?"white":"black",
@@ -6,46 +8,33 @@ export default function About(props) {
     }
   return (
     <>
-    <div className='container my-5'>
-        <div className="accordion" id="accordionExample">
-        <div className="accordion-item" >
-            <h2 className="accordion-header" style={{color:"coral"}}>
-            <button className="accordion-button"style={myStyle} type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                Accordion Item #1
-            </button>
-            </h2>
-            <div id="collapseOne" className="accordion-collapse collapse show" data-bs-parent="#accordionExample">
-            <div className="accordion-body"style={myStyle}>
-                <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-            </div>
-            </div>
-        </div>
-        <div className="accordion-item">
-            <h2 className="accordion-header">
-            <button className="accordion-button collapsed"style={myStyle} type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                Accordion Item #2
-            </button>
-            </h2>
-            <div id="collapseTwo" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
-            <div className="accordion-body"style={myStyle}>
-                <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-            </div>
-            </div>
-        </div>
-        <div className="accordion-item">
-            <h2 className="accordion-header">
-            <button className="accordion-button collapsed"style={myStyle} type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                Accordion Item #3
-            </button>
-            </h2>
-            <div id="collapseThree" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
-            <div className="accordion-body"style={myStyle}>
-                <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-            </div>
-            </div>
-        </div>
-        </div>
-    </div>
+    <Container fluid className="about-section">
+      <Container>
+        <Row style={{ justifyContent: "center", padding: "10px" }}>
+          <Col
+            md={7}
+            style={{
+              justifyContent: "center",
+              paddingTop: "30px",
+              paddingBottom: "50px",
+            }}
+          >
+            <h1 style={{ fontSize: "2.1em", paddingBottom: "20px",color:"coral" }}>
+            Be familiar with my<strong className="coral"> PERSONA</strong>
+            </h1>
+            <Aboutcard />
+          </Col>
+          <Col
+            md={5}
+            style={{ paddingTop: "120px", paddingBottom: "50px" }}
+            className="about-img"
+          >
+            <img src={laptopImg} alt="about" className="img-fluid" />
+          </Col>
+        </Row>
+        <Github />
+      </Container>
+    </Container>
     </>
   )
 }
