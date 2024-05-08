@@ -1,6 +1,5 @@
 import React from 'react';
 import { Container,Row,Col } from 'react-bootstrap';
-import Github from './Github';
 import Card from "react-bootstrap/Card";
 import { ImPointRight } from "react-icons/im";
 import '../App.css'
@@ -67,7 +66,6 @@ export default function About(props) {
             <img src={laptopImg} alt="about" className="img-fluid" />
           </Col> */}
         </Row>
-        <Github />
       </Container>
     </Container>
     </>
