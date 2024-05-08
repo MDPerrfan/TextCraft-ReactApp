@@ -1,8 +1,12 @@
 import React,{useState,useEffect} from 'react';
+import 'boxicons';
+
 export default function TextForm(props) {
     const[typingSpeed,setTypingSpeed]=useState(0);
     const[startTime,setStartTime]=useState(null);
     const [text, setText]=useState ('');
+    const [alertMessage, setAlertMessage] = useState('');
+
     const handleUpClick= () =>{
         let newText=text.toUpperCase();
         setText(newText);
@@ -16,13 +20,21 @@ export default function TextForm(props) {
         let newText=text.replace(/\s/g, "");
         setText(newText);
     }
+    const showAlert=(message)=>{
+        setAlertMessage(message);
+        setTimeout(()=>{
+            setAlertMessage('');
+        },1000);
+    }
     const handleCopy = () => {
         navigator.clipboard.writeText(text);
+        showAlert("Text copied to clipboard!")
     };
 
     const handlePaste = async () => {
         const clipboardText = await navigator.clipboard.readText();
         setText(clipboardText);
+        showAlert('Text pasted from clipboard!');
     };
     const resetText=()=>{
         let reset="";
@@ -45,11 +57,11 @@ export default function TextForm(props) {
     }, [text, startTime]);
   return (
     <>
-        <div className="container my-3" style={{color:props.mode==='dark'?'white':'black'}}>     
-            <div className="mb-3">
-                <h1>{props.title}</h1>
-                <textarea className="form-control"style={{backgroundColor:props.mode==='dark'?'#282e3a':'white',color:props.mode==='dark'?'white':'black'}} value={text} onChange={handleOnChange} id="exampleFormControlTextarea1" rows="12"></textarea>
-            </div>
+        <div className="container " style={{color:props.mode==='dark'?'white':'black'}}>
+            <div className="alert mb-4"style={{height:"50px"}}>{alertMessage && <div class="alert alert-success" role="alert">{alertMessage}</div>}    
+            </div>           
+            <h1>{props.title}</h1>
+            <textarea className="form-control "style={{backgroundColor:props.mode==='dark'?'#282e3a':'white',color:props.mode==='dark'?'white':'black'}} value={text} onChange={handleOnChange} id="exampleFormControlTextarea1" rows="12"></textarea>        
             <button disabled={text.length===0} className="btn btn-primary mx-3 my-3 " onClick={handleUpClick}>Convert to UpperCase</button>
             <button disabled={text.length===0} className="btn btn-primary mx-3 my-3 " onClick={handlelowClick}>Convert to LowerCase</button>
             <button disabled={text.length===0} className="btn btn-primary mx-3 my-3 " onClick={handleSpaceremove}>Remove Spaces</button>
@@ -59,12 +71,12 @@ export default function TextForm(props) {
         </div>
         <div className="d-flex">
             <div className="container"style={{color:props.mode==='dark'?'white':'black'}} >
-                <h2>Your Text Summary</h2>
+                <h3>Your Text Summary</h3>
                 <p>{(text.split(/\s+/).filter(word => word.trim() !== "")).length} Words and {text.length} Characters</p>
             </div>
             <div className="container" style={{ color: props.mode === 'dark' ? 'white' : 'black' }}>
-                <h3>Typing Speed</h3>
-                <p>{typingSpeed} WPM</p>
+                <h4>Typing Speed</h4>
+                <p>{typingSpeed} WPM<box-icon  type="solid" name="tachometer"></box-icon></p>
             </div>
         </div>         
     </>
