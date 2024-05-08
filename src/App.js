@@ -19,7 +19,7 @@ function App() {
       document.body.style.backgroundColor = 'white';
     } else {
       setMode('dark');
-      setToggleText('Enable Light Mode');
+      setToggleText('Disable Dark Mode');
       document.body.style.backgroundColor = '#0a204b';
     }
   };
